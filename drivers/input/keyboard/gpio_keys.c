@@ -716,8 +716,8 @@ static void flip_cover_work(struct work_struct *work)
 	
 	if(!ts_powered_on && !ddata->flip_cover){
 	  printk("[keys] screen already off\n");
-            }else if(ts_powered_on && ddata->flip_cover){
-               printk("[keys] screen already on\n");
+        }else if(ts_powered_on && ddata->flip_cover){
+          printk("[keys] screen already on\n");
 	}else{
           input_report_key(ddata->input, KEY_POWER, 1);
  	  input_sync(ddata->input);

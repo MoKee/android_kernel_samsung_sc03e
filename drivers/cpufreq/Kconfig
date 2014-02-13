@@ -159,6 +159,14 @@ config CPU_FREQ_DEFAULT_GOV_ZZMOOVE
 	  CPU Hotplug modifications partially taken from ktoonservative governor from
  	  ktoonsez KT747-JB kernel
 
+config CPU_FREQ_DEFAULT_GOV_PEGASUSQPLUS
+	bool "pegasusqplus"
+	select CPU_FREQ_GOV_PEGASUSQPLUS
+
+config CPU_FREQ_DEFAULT_GOV_YANKASUSQ
+	bool "yankasusq"
+	select CPU_FREQ_GOV_YANKASUSQ
+	
 endchoice
 
 config CPU_FREQ_GOV_LULZACTIVEQ
@@ -328,6 +336,9 @@ config CPU_FREQ_GOV_ADAPTIVE
 config CPU_FREQ_GOV_PEGASUSQ
 	tristate "'pegasusq' cpufreq policy governor"
 
+config CPU_FREQ_GOV_PEGASUSQPLUS
+	tristate "'pegasusqplus' cpufreq policy governor"
+	
 config CPU_FREQ_GOV_ZZMOOVE
 	tristate "'zzmoove' cpufreq governor"
 	depends on CPU_FREQ
@@ -336,6 +347,11 @@ config CPU_FREQ_GOV_ZZMOOVE
  	  conservative 'smoove' governor from Michael Weingaertner.
 	  Modified by Zane Zaminsky November 2012 to be
 	  hotplug-able and optimzed for use with Samsung I9300.
+
+config CPU_FREQ_GOV_YANKASUSQ
+	tristate "'yankasusq' cpufreq policy governor"
+	help
+	  based on PegasusQ - This driver is work in progress
 
 config CPU_FREQ_GOV_SLP
 	tristate "'slp' cpufreq policy governor"
